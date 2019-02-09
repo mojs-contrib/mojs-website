@@ -1,107 +1,40 @@
 {
   "name": "mojs-website",
-  "description": "motion graphics for the web",
-  "version": "0.0.0",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "node server.js",
-    "dev": "webpack-dev-server --devtool eval --hot --inline --progress --colors"
-  },
-  "author": {
-    "name": "LegoMushroom",
-    "email": "legomushroom@gmail.com",
-    "twitter": "@legomushroom",
-    "url": "http://legomushroom.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "keywords": [
-    "motion",
-    "effects",
-    "animation",
-    "motion graphics"
-  ],
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
-  "main": "",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "classlist-polyfill": "^1.0.0",
-    "cookies-js": "^1.2.1",
-    "fastclick": "^1.0.6",
-    "hammerjs": "^2.0.4",
-    "howler": "^1.1.26",
-    "impulse": "^0.1.0",
-    "iscroll": "^5.1.3",
-    "mo-js": "^0.265.6",
-    "react": "^0.13.3",
-    "react-async": "^2.1.0",
-    "react-component-resizable": "^0.2.3",
-    "react-hammerjs": "^0.2.2",
-    "react-headroom": "^1.6.0",
-    "react-prism": "^1.3.0",
-    "react-router": "^0.13.3",
-    "react-router-component": "^0.24.4",
-    "react-sticky": "^2.1.1",
-    "react-tappable": "^0.5.0-beta.3",
-    "tapjs": "^1.0.6"
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "prettier": "^1.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.3"
   },
-  "devDependencies": {
-    "6to5-loader": "^2.0.0",
-    "autoprefixer-loader": "^1.2.0",
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-es2015-classes": "^6.9.0",
-    "babel-plugin-transform-runtime": "^6.5.2",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-es2015-loose": "^7.0.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-preset-stage-2": "^6.11.0",
-    "babel-runtime": "^6.9.2",
-    "cjsx-loader": "^2.0.1",
-    "coffee-loader": "^0.7.2",
-    "coffee-script": "^1.9.1",
-    "core-js": "^0.4.5",
-    "css-loader": "^0.9.1",
-    "file-loader": "^0.8.1",
-    "gulp": "latest",
-    "gulp-autoprefixer": "0.0.6",
-    "gulp-babel": "^4.0.0",
-    "gulp-browserify": "latest",
-    "gulp-changed": "~0.2.0",
-    "gulp-coffee": "~1.4.1",
-    "gulp-coffeelint": "*",
-    "gulp-concat": "*",
-    "gulp-csslint": "*",
-    "gulp-jade": "~0.4.2",
-    "gulp-karma": "*",
-    "gulp-livereload": "~1.2.0",
-    "gulp-minify-css": "~0.3.0",
-    "gulp-notify": "~0.5.1",
-    "gulp-plumber": "*",
-    "gulp-rename": "latest",
-    "gulp-rimraf": "^0.1.1",
-    "gulp-stylus": "latest",
-    "gulp-uglify": "latest",
-    "gulp-watch": "*",
-    "jade": "^1.9.2",
-    "jade-loader": "^0.7.1",
-    "marked": "^0.3.3",
-    "nib": "^1.1.0",
-    "nodemon": "*",
-    "raw-loader": "^0.5.1",
-    "run-sequence": "^1.0.2",
-    "style-loader": "^0.8.3",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.1.1",
-    "unminified-webpack-plugin": "^1.1.0",
-    "url-loader": "^0.5.5",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }
